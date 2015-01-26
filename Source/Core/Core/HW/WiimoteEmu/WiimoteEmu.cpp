@@ -276,7 +276,7 @@ Wiimote::Wiimote( const unsigned int index )
 
 	// extension
 	groups.emplace_back(m_extension = new Extension(_trans("Extension")));
-	m_extension->attachments.emplace_back(new WiimoteEmu::None(m_reg_ext));
+	m_extension->attachments.emplace_back(new WiimoteEmu::NoneAttachment(m_reg_ext));
 	m_extension->attachments.emplace_back(new WiimoteEmu::Nunchuk(m_reg_ext));
 	m_extension->attachments.emplace_back(new WiimoteEmu::Classic(m_reg_ext));
 	m_extension->attachments.emplace_back(new WiimoteEmu::Guitar(m_reg_ext));

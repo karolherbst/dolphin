@@ -32,10 +32,10 @@ protected:
 	static const ControlState DEFAULT_ATTACHMENT_STICK_RADIUS;
 };
 
-class None : public Attachment
+class NoneAttachment : public Attachment
 {
 public:
-	None(WiimoteEmu::ExtensionReg& _reg);
+	NoneAttachment(WiimoteEmu::ExtensionReg& _reg);
 };
 
 }

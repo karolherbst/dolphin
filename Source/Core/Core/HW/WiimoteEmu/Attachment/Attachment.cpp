@@ -24,7 +24,7 @@ Attachment::Attachment(const char* const _name, WiimoteEmu::ExtensionReg& _reg)
 	memset(calibration, 0, sizeof(calibration));
 }
 
-None::None(WiimoteEmu::ExtensionReg& _reg) : Attachment("None", _reg)
+NoneAttachment::NoneAttachment(WiimoteEmu::ExtensionReg& _reg) : Attachment("None", _reg)
 {
 	// set up register
 	memcpy(&id, nothing_id, sizeof(nothing_id));
