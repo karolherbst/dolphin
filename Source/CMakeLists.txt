@@ -12,6 +12,14 @@ macro(add_dolphin_library_nopch lib srcs libs)
 	target_link_libraries(${lib} ${libs})
 endmacro(add_dolphin_library_nopch)
 
+macro(add_dolphin_executable exe srcs libs)
+	add_executable(${exe} ${srcs})
+	target_link_libraries(${exe} ${libs})
+	if(ENABLE_PCH)
+		cotire(${exe})
+	endif(ENABLE_PCH)
+endmacro(add_dolphin_executable)
+
 add_subdirectory(Core)
 add_subdirectory(UnitTests)
 
