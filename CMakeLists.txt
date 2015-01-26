@@ -29,6 +29,11 @@ endif()
 # TODO: Add DSPSpy
 option(DSPTOOL "Build dsptool" OFF)
 
+set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/CMake/Modules")
+if(ENABLE_PCH)
+  include(cotire)
+endif(ENABLE_PCH)
+
 # Update compiler before calling project()
 if (APPLE)
 	# Use clang compiler

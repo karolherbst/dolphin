@@ -57,10 +57,10 @@ if(LIBAV_FOUND OR WIN32)
 	set(SRCS ${SRCS} AVIDump.cpp)
 endif()
 
-add_dolphin_library(videocommon "${SRCS}" "${LIBS}")
-
 if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
 	if(LIBAV_FOUND)
-		target_link_libraries(videocommon ${LIBS} ${LIBAV_LIBRARIES})
+		set(LIBS ${LIBS} ${LIBAV_LIBRARIES})
 	endif()
 endif()
+
+add_dolphin_library_nopch(videocommon "${SRCS}" "${LIBS}")
